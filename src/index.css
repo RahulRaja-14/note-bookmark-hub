@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  Design System: Warm Paper-like Aesthetic
+  Inspiration: Notion, Bear Notes, Raindrop.io
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+
+@layer base {
+  :root {
+    /* Warm paper-like background */
+    --background: 40 33% 98%;
+    --foreground: 30 10% 15%;
+
+    /* Cards with cream tint */
+    --card: 40 40% 99%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 40% 99%;
+    --popover-foreground: 30 10% 15%;
+
+    /* Rich amber primary */
+    --primary: 30 80% 50%;
+    --primary-foreground: 40 33% 98%;
+
+    /* Soft sage secondary */
+    --secondary: 150 20% 93%;
+    --secondary-foreground: 150 25% 25%;
+
+    /* Muted cream */
+    --muted: 40 20% 94%;
+    --muted-foreground: 30 10% 45%;
+
+    /* Accent - warm coral */
+    --accent: 15 80% 60%;
+    --accent-foreground: 40 33% 98%;
+
+    /* Destructive - muted red */
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 40 33% 98%;
+
+    /* Borders - subtle warm gray */
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 30 80% 50%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar - slightly warmer */
+    --sidebar-background: 40 30% 96%;
+    --sidebar-foreground: 30 10% 25%;
+    --sidebar-primary: 30 80% 50%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 40 25% 92%;
+    --sidebar-accent-foreground: 30 10% 20%;
+    --sidebar-border: 30 15% 88%;
+    --sidebar-ring: 30 80% 50%;
+
+    /* Custom design tokens */
+    --success: 150 60% 45%;
+    --success-foreground: 40 33% 98%;
+    --warning: 45 90% 50%;
+    --warning-foreground: 30 10% 15%;
+    --info: 200 70% 50%;
+    --info-foreground: 40 33% 98%;
+
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(30 80% 50%), hsl(15 80% 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(40 33% 98%), hsl(40 30% 95%));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(30 15% 30% / 0.08), 0 4px 16px -4px hsl(30 15% 30% / 0.06);
+    --shadow-medium: 0 4px 16px -4px hsl(30 15% 30% / 0.12), 0 8px 32px -8px hsl(30 15% 30% / 0.08);
+    --shadow-glow: 0 0 20px hsl(30 80% 50% / 0.15);
+  }
+
+  .dark {
+    --background: 30 15% 10%;
+    --foreground: 40 20% 92%;
+
+    --card: 30 15% 12%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 30 15% 12%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 30 80% 55%;
+    --primary-foreground: 30 15% 10%;
+
+    --secondary: 30 15% 18%;
+    --secondary-foreground: 40 20% 85%;
+
+    --muted: 30 15% 18%;
+    --muted-foreground: 40 15% 55%;
+
+    --accent: 15 70% 55%;
+    --accent-foreground: 40 20% 92%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 40 20% 92%;
+
+    --border: 30 15% 22%;
+    --input: 30 15% 22%;
+    --ring: 30 80% 55%;
+
+    --sidebar-background: 30 15% 8%;
+    --sidebar-foreground: 40 20% 85%;
+    --sidebar-primary: 30 80% 55%;
+    --sidebar-primary-foreground: 30 15% 10%;
+    --sidebar-accent: 30 15% 15%;
+    --sidebar-accent-foreground: 40 20% 85%;
+    --sidebar-border: 30 15% 22%;
+    --sidebar-ring: 30 80% 55%;
+
+    --success: 150 50% 40%;
+    --warning: 45 80% 45%;
+    --info: 200 60% 45%;
+
+    --gradient-warm: linear-gradient(135deg, hsl(30 80% 55%), hsl(15 70% 50%));
+    --gradient-subtle: linear-gradient(180deg, hsl(30 15% 10%), hsl(30 15% 8%));
+    
+    --shadow-soft: 0 2px 8px -2px hsl(0 0% 0% / 0.3), 0 4px 16px -4px hsl(0 0% 0% / 0.2);
+    --shadow-medium: 0 4px 16px -4px hsl(0 0% 0% / 0.4), 0 8px 32px -8px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 20px hsl(30 80% 55% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Merriweather', Georgia, serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-medium);
+  }
+
+  .btn-gradient {
+    background: var(--gradient-warm);
+    @apply text-primary-foreground font-medium;
+  }
+
+  .btn-gradient:hover {
+    filter: brightness(1.05);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .tag-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    @apply bg-secondary text-secondary-foreground;
+  }
+
+  .tag-badge-primary {
+    @apply bg-primary/10 text-primary;
+  }
+
+  .favorite-star {
+    @apply transition-all duration-200;
+  }
+
+  .favorite-star:hover {
+    @apply scale-110;
+  }
+
+  .favorite-star.active {
+    @apply text-warning;
+  }
+
+  .search-input {
+    @apply w-full pl-10 pr-4 py-2.5 rounded-xl;
+    @apply bg-card border border-border;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary;
+    @apply transition-all duration-200;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl;
+    @apply text-sidebar-foreground/70 font-medium;
+    @apply transition-all duration-200;
+  }
+
+  .sidebar-link:hover {
+    @apply bg-sidebar-accent text-sidebar-foreground;
+  }
+
+  .sidebar-link.active {
+    @apply bg-primary text-primary-foreground;
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
