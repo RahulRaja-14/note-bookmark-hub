@@ -1,6 +1,6 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
-import { Star, FileText, Bookmark, ArrowRight } from 'lucide-react';
+import { BookOpen, FileText, Bookmark, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Index() {
@@ -25,7 +25,7 @@ export default function Index() {
         <div className="text-center animate-slide-up">
           {/* Logo */}
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-primary shadow-glow mb-6">
-            <Star className="w-10 h-10 text-primary-foreground" />
+            <BookOpen className="w-10 h-10 text-primary-foreground" />
           </div>
 
           <h1 className="font-serif text-4xl md:text-6xl font-bold mb-6">

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
-import { Star, Mail, Lock, Eye, EyeOff, CheckCircle, ArrowLeft, ShieldCheck } from 'lucide-react';
+import { BookOpen, Mail, Lock, Eye, EyeOff, CheckCircle, ArrowLeft, ShieldCheck } from 'lucide-react';
 
 type AuthStep = 'login' | 'signup-email' | 'signup-verify' | 'signup-password';
 
@@ -197,7 +197,7 @@ export default function Auth() {
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary shadow-glow mb-4">
-            <Star className="w-8 h-8 text-primary-foreground" />
+            <BookOpen className="w-8 h-8 text-primary-foreground" />
           </div>
           <h1 className="font-serif text-3xl font-bold mb-2">NoteMark</h1>
           <p className="text-muted-foreground">Your personal notes & bookmarks manager</p>

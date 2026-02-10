@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { FileText, Bookmark, LogOut, Star, Menu, X } from 'lucide-react';
+import { FileText, Bookmark, LogOut, BookOpen, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { useAuth } from '@/hooks/useAuth';
@@ -49,7 +49,7 @@ export function Sidebar() {
         <div className="p-6 border-b border-sidebar-border">
           <Link to="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-glow">
-              <Star className="w-5 h-5 text-primary-foreground" />
+              <BookOpen className="w-5 h-5 text-primary-foreground" />
             </div>
             <span className="font-serif text-xl font-bold text-sidebar-foreground">
               NoteMark
